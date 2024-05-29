@@ -33,6 +33,9 @@
 
         <TextBlock Grid.Column="0" Grid.Row="6">Number of Runs</TextBlock>
         <TextBlock Grid.Column="1" Grid.Row="6" Margin="2" Text="{Binding Runs.Count}"/>
+        
+        <TextBlock Grid.Column="0" Grid.Row="3">Description</TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="3" Margin="2" Text="{Binding Description}"/>
 
     </Grid>
 </UserControl>
