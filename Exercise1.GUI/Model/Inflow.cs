@@ -56,6 +56,14 @@ namespace Exercise1.GUI
                         .Select(o => o.RunGUID).ToList();
                 return DataContext.Runs.Where(r => runGUIDs.Contains(r.GUID));
             }
+        } public IEnumerable<GageReading> GageReadings
+        {
+            get
+            {
+                var gageGUIDs = DataContext.GageReadings.Where(o => o.InflowGUID == GUID)
+                        .Select(o => o.GUID).ToList();
+                return DataContext.GageReadings.Where(r => gageGUIDs.Contains(r.GUID));
+            }
         }
 
     }
