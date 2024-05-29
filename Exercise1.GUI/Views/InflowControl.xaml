@@ -33,18 +33,28 @@
         <TextBlock Grid.Column="0" Grid.Row="3">Description</TextBlock>
         <TextBox   Grid.Column="1" Grid.Row="3" Margin="2" Text="{Binding Description}"/>
 
-        <TextBlock Grid.Column="0" Grid.Row="4"># Gage Readings</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="4" Margin="2" Text="{Binding GageReadings.Count}"/>
-        <TextBlock Grid.Column="0" Grid.Row="5"># Current Runs</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="5" Margin="2" Text="{Binding CurrentRuns.Count}"/>
-     
-        <TextBlock Grid.Column="0" Grid.Row="6">Number of Runs</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="6" Margin="2" Text="{Binding Runs.Count}"/>
-<TextBlock Grid.Column="0" Grid.Row="6">Number of Runs</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="6" Margin="2" Text="{Binding Runs.Count}"/>
-        
-        
        
+        <TextBlock Grid.Column="0" Grid.Row="4"># Current Runs</TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="4" Margin="2" Text="{Binding CurrentRuns.Count}"/>
 
+        <TextBlock Grid.Column="0" Grid.Row="5">Number of Runs</TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="5" Margin="2" Text="{Binding Runs.Count}"/>
+   
+        <TextBlock Grid.Column="0" Grid.Row="6"># Gage Readings</TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="6" Margin="2" Text="{Binding GageReadings.Count}"/>
+
+        <TextBlock Grid.ColumnSpan="2" Grid.Row="7" Margin="6,16,6,6" 
+            HorizontalAlignment="Center" TextAlignment="Center"
+            Text="Gage Reading Timestamps" FontWeight="Bold"/>
+
+        <ListView Margin="6, 32,6,6" Grid.Row="8" Grid.ColumnSpan="2" ItemsSource="{Binding GageReadings}">
+            <ListView.ItemTemplate>
+            <DataTemplate>
+                <StackPanel>
+                        <TextBlock  Grid.Column="1"  Grid.Row="9" Text="{Binding TimeStamp}"/>
+                </StackPanel>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
     </Grid>
 </UserControl>
