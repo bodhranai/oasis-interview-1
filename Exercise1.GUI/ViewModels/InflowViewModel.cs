@@ -20,6 +20,7 @@ namespace Exercise1.GUI
             Inflow = inflow;
             GUID = inflow.GUID;
             Runs = new ObservableCollection<Run>(inflow.Runs);
+            CurrentRuns = new ObservableCollection<Run>(inflow.CurrentRuns);
             GageReadings = new ObservableCollection<GageReading>(inflow.GageReadings);
 
         }
@@ -88,6 +89,7 @@ namespace Exercise1.GUI
         /// The collection of Runs that this inflow is associated with
         /// </summary>
         public ObservableCollection<Run> Runs { get; set; }
+        public ObservableCollection<Run> CurrentRuns { get; set; }
         public ObservableCollection<GageReading> GageReadings { get; set; }
     }
 }

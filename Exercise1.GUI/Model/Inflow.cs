@@ -56,6 +56,13 @@ namespace Exercise1.GUI
                         .Select(o => o.RunGUID).ToList();
                 return DataContext.Runs.Where(r => runGUIDs.Contains(r.GUID));
             }
+        }
+        public IEnumerable<Run> CurrentRuns
+        {
+            get
+            {
+                return Runs.Where(r => r.IsCurrent==true);
+            }
         } public IEnumerable<GageReading> GageReadings
         {
             get
